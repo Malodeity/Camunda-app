@@ -12,26 +12,11 @@
     <bpmn:scriptTask id="Activity_0yoskxv" name="Print a Message" scriptFormat="JavaScript">
       <bpmn:incoming>Flow_1l1ue14</bpmn:incoming>
       <bpmn:outgoing>Flow_08ij1pd</bpmn:outgoing>
-      <bpmn:script>// Print a simple message
-java.lang.System.out.println('Hello, this comes from BPMN');
+      <bpmn:script>print('Hello, this is coming from BPMN');
+print(itemName);
+print(execution.getVariable("itemName"));
+print('Business Key :: ' + execution.processBusinessKey);
 
-// Fetch the process variables
-var itemName = execution.getVariable("itemName");
-var businessKey = execution.getBusinessKey();
-
-// Check and print the item name
-if (itemName !== null) {
-    java.lang.System.out.println(itemName);
-} else {
-    java.lang.System.out.println("Item Name is null");
-}
-
-// Check and print the business key
-if (businessKey !== null) {
-    java.lang.System.out.println("Business Key: " + businessKey);
-} else {
-    java.lang.System.out.println("Business Key is null");
-}
 </bpmn:script>
     </bpmn:scriptTask>
   </bpmn:process>
